@@ -3,7 +3,6 @@ const app = express()
 const cors = require('cors');
 const mongodb =require('mongodb');
 const bcrypt = require('bcryptjs');
-//const Razorpay = require('razorpay')
 const jwt = require('jsonwebtoken');
  require('dotenv').config()
 const URL = process.env.LINK;
@@ -232,17 +231,6 @@ app.post("/hours/:id",async(req,res)=>{
         res.json({message:"Something Went Wrong"});
     }
 })
-
-// var instance = new Razorpay({
-//   key_id: '<your_partner_key>',
-//   key_secret: '<your_partner_secret>',
-//   headers: {
-//     "X-Razorpay-Account": "<merchant_account_id>"
-//   }
-// });
-
-// instance.orders.all().then(console.log).catch(console.error);
-
 
 
 
