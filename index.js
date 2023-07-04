@@ -13,8 +13,8 @@ const mongoclient = new mongodb.MongoClient(URL)
 app.use(express.json());
 
 app.use(cors({
-     //origin:"http://localhost:3000"
-    origin:"https://eqiumentrentalapp.netlify.app"
+    //  origin:"http://localhost:3000"
+     origin:"https://eqiumentrentalapp.netlify.app"
 }))
 
 app.get("/", function (req, res) {
