@@ -4,6 +4,8 @@ const cors = require('cors');
 const mongodb =require('mongodb');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+
+
  require('dotenv').config()
 const URL = process.env.LINK;
 const DB = process.env.DB;
@@ -13,12 +15,12 @@ const mongoclient = new mongodb.MongoClient(URL)
 app.use(express.json());
 
 app.use(cors({
-    //  origin:"http://localhost:3000"
-     origin:"https://eqiumentrentalapp.netlify.app"
+      // origin:"http://localhost:3000"
+      origin:"https://eqiumentrentalapp.netlify.app"
 }))
 
 app.get("/", function (req, res) {
-    res.send("<h1>Equipment rental portal Project...</h1>");
+    res.send("<h5>Equipment rental app</h5>");
   });
 
   app.post("/admin/register", async (req, res) => {
@@ -231,7 +233,6 @@ app.post("/hours/:id",async(req,res)=>{
         res.json({message:"Something Went Wrong"});
     }
 })
-
 
 
 app.listen(process.env.PORT,()=> console.log(`server is running localhost:${process.env.PORT}`));
